@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced Form Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.5;
+      color: #333;
+    }
+    header, main, footer {
+      margin-bottom: 2rem;
+    }
+    h1, h2 {
+      color: #005f73;
+    }
+    ul, ol {
+      margin-bottom: 1rem;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    th {
+      background-color: #e0fbfc;
+    }
+    .media-container {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+    form div {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+    input[readonly] {
+      background-color: #f3f3f3;
+      color: #888;
+    }
+    button {
+      background-color: #008891;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f5f;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Our Product Highlights & Order Form</h1>
+  <p>Explore our product features below and fill out the order form to get started.</p>
+</header>
+
+<main>
+  <section aria-labelledby="features-heading">
+    <h2 id="features-heading">Product Features</h2>
+    <ul>
+      <li>High performance and reliability</li>
+      <li>Affordable price with excellent value</li>
+      <li>Eco-friendly materials used</li>
+    </ul>
+    <ol>
+      <li>Choose your preference</li>
+      <li>Complete the form below</li>
+      <li>Submit and receive confirmation</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="specs-heading">
+    <h2 id="specs-heading">Technical Specifications</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Specification</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Weight</td><td>2.5 kg</td></tr>
+        <tr><td>Dimensions</td><td>30cm x 20cm x 15cm</td></tr>
+        <tr><td>Material</td><td>Recycled aluminum</td></tr>
+        <tr><td>Warranty</td><td>3 years</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="media-heading" class="media-container">
+    <h2 id="media-heading">Media Preview</h2>
+    <img src="assets/mike-castro-demaria-94BUerwdFP8-unsplash.jpg" width="400" height="200" alt="Product image showing design features" />
+    <video controls width="800" aria-describedby="video-desc">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <p id="video-desc">Watch our product introduction video.</p>
+  </section>
+
+  <section aria-labelledby="order-form-heading">
+    <h2 id="order-form-heading">Order Form</h2>
+    <form action="#" method="post" novalidate>
+      <div>
+        <label for="name">Full Name <span aria-hidden="true" style="color: red;">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" minlength="3" />
+      </div>
+
+      <div>
+        <label for="email">Email Address <span aria-hidden="true" style="color: red;">*</span></label>
+        <input type="email" id="email" name="email" placeholder="example@example.com" required autocomplete="email" />
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+123 456 7890" pattern="^\+?\d{7,15}$" autocomplete="tel" />
+        <small>Format example: +1234567890</small>
+      </div>
+
+      <div>
+        <label for="quantity">Quantity <span aria-hidden="true" style="color: red;">*</span></label>
+        <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required />
+      </div>
+
+      <div>
+        <label for="color">Select Color</label>
+        <select id="color" name="color" autocomplete="off">
+          <option value="">-- Select color --</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="delivery">Preferred Delivery Date</label>
+        <input type="date" id="delivery" name="delivery" min="2025-08-10" max="2026-01-01" />
+      </div>
+
+      <fieldset>
+        <legend>Additional Options</legend>
+        <div>
+          <input type="checkbox" id="giftWrap" name="giftWrap" />
+          <label for="giftWrap">Gift Wrap</label>
+        </div>
+        <div>
+          <input type="checkbox" id="newsletter" name="newsletter" />
+          <label for="newsletter">Subscribe to newsletter</label>
+        </div>
+      </fieldset>
+
+      <div>
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Your comments here..."></textarea>
+      </div>
+
+      <div>
+        <label for="orderID">Order ID (readonly)</label>
+        <input type="text" id="orderID" name="orderID" value="ORD20250810" readonly />
+      </div>
+
+      <div>
+        <button type="submit">Submit Order</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Example Company. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
